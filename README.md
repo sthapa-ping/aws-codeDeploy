@@ -66,9 +66,7 @@ South America (Sao Paulo)       sa-east-1
     - ls /opt/codedeploy-agent/deployment-root/*/*
 ```
 
-### Tech
-
-Dillinger uses a number of open source projects to work properly:
+### Links
 
 * [What is codedeploy] - http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
 * [Github & CodeDeploy] - https://blogs.aws.amazon.com/application-management/post/Tx33XKAKURCCW83/Automatically-Deploy-from-GitHub-Using-AWS-CodeDeploy
