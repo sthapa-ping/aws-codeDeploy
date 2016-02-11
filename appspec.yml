@@ -1,0 +1,44 @@
+version: 0.0
+os: linux
+
+hooks:
+  ApplicationStop:
+    - location: scripts/deregister_from_elb.sh
+      timeout: 120
+      runas: root
+    - location: scripts/stop_apache2.sh
+      timeout: 30
+      runas: root
+  BeforeInstall:
+    - location: scripts/disable_sites.sh
+      timeout: 30
+      runas: root
+    - location: scripts/deploy_config.sh
+      timeout: 60
+      runas: root
+    - location: scripts/deploy_app.sh
+      timeout: 60
+      runas: root
+  AfterInstall:
+    - location: scripts/fix_ownership.sh
+      timeout: 30
+      runas: root
+    - location: scripts/fix_permissions.sh
+      timeout: 30
+      runas: root
+    - location: scripts/enable_sites.sh
+      timeout: 30
+      runas: root
+    - location: scripts/update_record_set.sh
+      timeout: 60
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_apache2.sh
+      timeout: 30
+      runas: root
+    - location: scripts/register_with_elb.sh
+      timeout: 120
+      runas: root
+    - location: scripts/keyscan.sh
+      timeout: 30
+      runas: root
