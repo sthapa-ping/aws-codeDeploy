@@ -1,7 +1,7 @@
 ### AWS CodeDeploy
 AWS CodeDeploy is a deployment service that enables developers to automate the deployment of applications to instances and to update the applications as required.
 
-IAM policy for Bitbucket/Github:
+IAM policy for bitbucket/github & AWS codeDeploy integration:
 ```json
      {
         "Version": "2012-10-17",
@@ -26,12 +26,17 @@ IAM policy for Bitbucket/Github:
 
 ### Command to push latest code to S3
 ```sh
-/usr/local/bin/aws deploy push --application-name myAppStaging --s3-location s3://myAppStagingBucket/project1.zip --ignore-hidden-files --region <region id> --source .
+/usr/local/bin/aws deploy push --application-name myAppStaging --s3-location \
+s3://myAppStagingBucket/project1.zip --ignore-hidden-files \ 
+--region <region id> --source .
 ```
 
 ### Command to deploy
 ```sh
-aws deploy create-deployment --application-name myAppStaging --s3-location bucket=myAppStagingBucket,key=project1.zip,bundleType=zip,eTag=<eTag> --deployment-group-name myAppStaging --deployment-config-name CodeDeployDefault.OneAtATime --description test1 --region <region id>
+aws deploy create-deployment --application-name myAppStaging --s3-location \
+bucket=myAppStagingBucket,key=project1.zip,bundleType=zip,eTag=<eTag> \ 
+--deployment-group-name myAppStaging --deployment-config-name CodeDeployDefault.OneAtATime \ 
+--description test1 --region <region id>
 ```
 
 ### AWS Regions 
@@ -61,7 +66,7 @@ South America (Sao Paulo)       sa-east-1
     - ls /opt/codedeploy-agent/deployment-root/*/*
 ```
 
-### Links
+### Tech
 
 Dillinger uses a number of open source projects to work properly:
 
