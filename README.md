@@ -71,3 +71,4 @@ South America (Sao Paulo)       sa-east-1
 * [What is codedeploy] - http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
 * [Github & CodeDeploy] - https://blogs.aws.amazon.com/application-management/post/Tx33XKAKURCCW83/Automatically-Deploy-from-GitHub-Using-AWS-CodeDeploy
 * [Bitbucket & CodeDeploy] - https://aws.amazon.com/blogs/apn/announcing-atlassian-bitbucket-support-for-aws-codedeploy/
+* [Verify agent is running] - http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-run-agent-verify.html
